@@ -1,0 +1,10 @@
+{
+    "root": "your_project_directory",
+    "scripts": {
+        "start": "flask run"
+    },
+    "env": {
+        "FLASK_APP": "server.py"
+    },
+    "buildCommand": "pip install -r requirements.txt"
+}
